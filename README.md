@@ -10,6 +10,11 @@ Heavily inspired by [Brandon Rohrer's](https://github.com/brohrer) github [repo 
 ## Solution: The Enhancement
 Inspired from [Canny Edge Detector](https://docs.opencv.org/4.x/da/d22/tutorial_py_canny.html) where a gaussian blur is applied first and the edge detection filter later- I took two different approaches:
 
+1. A numbered list
+    1. A nested numbered list
+    2. Which is numbered
+2. Which is numbered
+
 1. Chain a convolution layer and an SCS layer:
     i. Filter the image with a conv2d layer.
     ii. Substract the the original image from the filtered image (hopfully to lower the values of the low frequency areas).
