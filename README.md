@@ -15,6 +15,7 @@ A pytorch implementation of Sharpened Cosine Similarity enhanced with filtering 
 Heavily inspired by [Brandon Rohrer's](https://github.com/brohrer) github [repo of sharpened-cosine-similarity](https://github.com/brohrer/sharpened-cosine-similarity), I implemented my own SCS2d pytorch layer a bit differently. When using the layer on images, we run into an **SCS weakness**: In an average image- there are a lot of areas with the same color and no significant change (in other words: an average image is composed largely out of low frequencies):
 
 ![picture alt](https://docs.opencv.org/3.4/fft1.jpg "FFT2 magnitude")
+
 Normalization by the same color significantly reduces the output signal from the SCS layer.
 
 ## Solution: The Enhancement
