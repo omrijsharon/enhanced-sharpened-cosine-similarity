@@ -9,6 +9,7 @@ Heavily inspired by [Brandon Rohrer's](https://github.com/brohrer) github [repo 
 
 ## Solution: The Enhancement
 Inspired from [Canny Edge Detector](https://docs.opencv.org/4.x/da/d22/tutorial_py_canny.html) where a gaussian blur is applied first and the edge detection filter later- I took two different approaches:
+
  Markup : 1. A numbered list
               1. A nested numbered list
               2. Which is numbered
