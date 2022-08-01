@@ -12,7 +12,12 @@ A pytorch implementation of Sharpened Cosine Similarity enhanced with filtering 
 [Brandon Rohrer](https://github.com/brohrer) shared his [insight on Twitter](https://twitter.com/_brohrer_/status/1232063619657093120?lang=en) about convolution layers not being a good feature extractors, and explained his idea to improve it (using cool animation!). [Reference to the tweet](https://twitter.com/_brohrer_/status/1232063619657093120?lang=en).
 
 ## The original implementation and it's weakness
-Heavily inspired by [Brandon Rohrer's](https://github.com/brohrer) github [repo of sharpened-cosine-similarity](https://github.com/brohrer/sharpened-cosine-similarity), I implemented my own SCS2d pytorch layer a bit differently. When using the layer on images, we run into an **SCS weakness**: In an average image- there are a lot of areas with the same color and no significant change (in other words: an average image is composed largely out of low frequencies). Normalization by the same color significantly reduces the output signal from the SCS layer.
+Heavily inspired by [Brandon Rohrer's](https://github.com/brohrer) github [repo of sharpened-cosine-similarity](https://github.com/brohrer/sharpened-cosine-similarity), I implemented my own SCS2d pytorch layer a bit differently. When using the layer on images, we run into an **SCS weakness**: In an average image- there are a lot of areas with the same color and no significant change (in other words: an average image is composed largely out of low frequencies):
+
+![picture alt](https://docs.opencv.org/3.4/fft1.jpg "Title is optional")
+
+
+Normalization by the same color significantly reduces the output signal from the SCS layer.
 
 ## Solution: The Enhancement
 Inspired from [Canny Edge Detector](https://docs.opencv.org/4.x/da/d22/tutorial_py_canny.html) where a gaussian blur is applied first and the edge detection filter later- I took two different approaches:
