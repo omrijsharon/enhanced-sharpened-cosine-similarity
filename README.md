@@ -1,5 +1,12 @@
-# Enhanced Sharpened Cosine Similarity
-Sharpened Cosine Similarity enhanced with filtering for better feature extraction. Also introducing a SCS Loss function. Pytorch implementation.
+# Enhanced Sharpened Cosine Similarity (SCS)
+A pytorch implementation of Sharpened Cosine Similarity enhanced with filtering for better feature extraction. 
+
+## In this repo
+- New SCS module (a bit different from the original).
+- SCS Loss function.
+- Fully differentiable High-Pass Filter (HPF).
+- Enhancement layers: chaining the difference between filter/conv2d output and the input following by an SCS layer.
+- TBA: 1D and 3D SCS layers.
 
 ## What is Sharpened Cosine Similarity and where did it come from?
 [Brandon Rohrer](https://github.com/brohrer) shared his [insight on Twitter](https://twitter.com/_brohrer_/status/1232063619657093120?lang=en) about convolution layers not being a good feature extractors, and explained his idea to improve it (using cool animation!). [Reference to the tweet](https://twitter.com/_brohrer_/status/1232063619657093120?lang=en).
