@@ -14,6 +14,7 @@ Inspired from [Canny Edge Detector](https://docs.opencv.org/4.x/da/d22/tutorial_
     1. Filter the image with a conv2d layer.
     2. Substract the the original image from the filtered image (hopfully to lower the values of the low frequency areas).
     3. Apply the SCS layer on the output from 1.b.
+    
 2.Chain a (fully differentiable) High-Pass Filter (HPF) and an SCS layer- one after the other. 
     1. The HPF layer is made of a gaussian blue layer and the output is the difference between the blured image and the original.
     2. The HPF layer is given a kernel size as a hyperparameter and learns 'sigma' (the spread of the gaussian within its kernel).
