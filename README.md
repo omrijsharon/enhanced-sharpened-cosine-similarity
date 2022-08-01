@@ -31,7 +31,7 @@ Inspired from [Canny Edge Detector](https://docs.opencv.org/4.x/da/d22/tutorial_
     2. The HPF layer is given a kernel size as a hyperparameter and learns 'sigma' (the spread of the gaussian within its kernel).
     3. The HPF output will have small values in most of an average image.
 
-## The addition of the Patch-wise Sharpened Cosine Similarity Loss
+## Patch-wise Sharpened Cosine Similarity Loss
 Instead of using an L2 loss in auto-encoders, we can compare features in each patch of the images between the 2 images using the SCS approach:
 * Divied the images into patches.
 * Use the SCS formula between all pairs of patchs.
