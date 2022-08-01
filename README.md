@@ -31,6 +31,9 @@ Instead of using an L2 loss in auto-encoders, we can compare features in each pa
 ### SharpCosSim2d
 The use of the SharpCosSim2d module and pytorch Conv2d module is the completely the same.
 No need to insert p and q hyperparameters- in this implementation they are learned parameters!
+```
+scs2d_layer = SharpCosSim2d(3, 27, kernel_size=(3,3))
+```
 ### HPF
 Heavily borrowed from torchvision.transforms.functional_tensor but in contrast of pytorch implementation- it is fully differentiable!
 ```
@@ -42,7 +45,7 @@ Heavily borrowed from torchvision.transforms.functional_tensor but in contrast o
 ```
     img = torch.randn(8, 3, 224, 224)
     conv2d_layer = nn.Conv2d(3, 27, kernel_size=(3,3))
-    scs2d_layer = nn.SharpCosSim2d(3, 27, kernel_size=(3,3))
+    scs2d_layer = SharpCosSim2d(3, 27, kernel_size=(3,3))
     enhanced_scs = EnhancedSCS2d(conv2d_layer, scs2d_layer)
     output = enhanced_scs(img)
 ```
@@ -50,7 +53,7 @@ Heavily borrowed from torchvision.transforms.functional_tensor but in contrast o
 ```
     img = torch.randn(8, 3, 224, 224)
     hpf_layer = HPF(kernel_size=11)
-    scs2d_layer = nn.SharpCosSim2d(3, 27, kernel_size=(3,3))
+    scs2d_layer = SharpCosSim2d(3, 27, kernel_size=(3,3))
     enhanced_scs = EnhancedSCS2d(hpf_layer, scs2d_layer)
     output = enhanced_scs(img)
 ```
