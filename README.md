@@ -11,9 +11,10 @@ Heavily inspired by [Brandon Rohrer's](https://github.com/brohrer) github [repo 
 Inspired from [Canny Edge Detector](https://docs.opencv.org/4.x/da/d22/tutorial_py_canny.html) where a gaussian blur is applied first and the edge detection filter later- I took two different approaches:
 
 1. Chain a convolution layer and an SCS layer:
- i. Filter the image with a conv2d layer.
-            ii. Substract the the original image from the filtered image (hopfully to lower the values of the low frequency areas).
-            iii. Apply the SCS layer on the output from 1.b.
+    i. Filter the image with a conv2d layer.
+    ii. Substract the the original image from the filtered image (hopfully to lower the values of the low frequency areas).
+    iii. Apply the SCS layer on the output from 1.b.
+2. sda
 
 2. Chain a (fully differentiable) High-Pass Filter (HPF) and an SCS layer- one after the other. 
 - The HPF layer is made of a gaussian blue layer and the output is the difference between the blured image and the original.
