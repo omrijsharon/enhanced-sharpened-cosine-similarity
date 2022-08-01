@@ -32,8 +32,8 @@ Inspired from [Canny Edge Detector](https://docs.opencv.org/4.x/da/d22/tutorial_
     3. The HPF output will have small values in most of an average image.
 
 ## Patch-wise Sharpened Cosine Similarity Loss
-Instead of using an L2 loss in auto-encoders, we can compare features in each patch of the images between the 2 images using the SCS approach:
-* Divied the images into patches.
+Instead of using an L2 loss in auto-encoders and some GAN architectures, we can compare features in each patch of the images between the 2 images using the SCS approach:
+* Divied the images into patches (each sliding window becomes a patch, see [pytorch unfold](https://pytorch.org/docs/stable/generated/torch.nn.Unfold.html) for more info).
 * Use the SCS formula between all pairs of patchs.
 * Reduce patch dimensions with your desired function (sum, mean, max, etc...).
 * Reduce batch dimensions with your desired function (sum, mean, max, etc...).
