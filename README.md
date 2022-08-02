@@ -44,7 +44,9 @@ Instead of using an L2 loss in auto-encoders and some GAN architectures, we can 
 The use of the SharpCosSim2d module and pytorch Conv2d module is the completely the same.
 No need to insert p and q hyperparameters- in this implementation they are learned parameters!
 ```
-scs2d_layer = SharpCosSim2d(3, 27, kernel_size=(3,3))
+    img = torch.randn(8, 3, 224, 224)
+    scs2d_layer = SharpCosSim2d(3, 27, kernel_size=(3,3))
+    output = scs2d_layer(img)
 ```
 ### HPF
 Heavily borrowed from torchvision.transforms.functional_tensor but in contrast of pytorch implementation- it is fully differentiable!
