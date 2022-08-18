@@ -77,5 +77,5 @@ Here we DO have to choose p and q. When p = 1 and q = 0, the Sharpened Cosine Si
 pwscs_loss(y_hat, y, kernel_size, q=1e-6, p=1, patch_reduce_func=torch.sum, batch_reduce_func=torch.mean)
 ```
 
-## requirements
+## Requirements
 Tested on python 3.8 and Pytorch 1.10.
